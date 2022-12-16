@@ -109,33 +109,53 @@ const App = () => {
 
   return (
     <div id="main">
-      <div>
-        <label>Name</label>
-        <input data-testid='name' type="text" name="name" onChange={handleChange} value={inputs.name}></input>
-      </div>
-      <div>
-        <label>Email Address</label>
-        <input data-testid='email' type="text" onChange={handleChange} value={inputs.email}></input>
-      </div>
-      <div>
-        <label>Gender</label>
-        <select data-testid='gender' default="Male" value={inputs.gender} name="gender" onChange={handleChange}>
-          <option value="male" >Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-      <div>
-        <label>Phone Number</label>
-        <input data-testid='phoneNumber' type="text" onChange={handleChange} value={inputs.phoneNumber}></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input data-testid='password' type="password" onChange={handleChange} value={inputs.password}></input>
-      </div>
-      <div>
-        <button type="submit" data-testid='submit' onClick={handleClick}>Submit</button>
-      </div>
+      <input
+        type="text"
+        name="name"
+        onChange={handleChange}
+        placeholder="Enter Name e.g. John Doe"
+        data-testid="name"
+        value={inputs.name}
+      />
+      <input
+        type="email"
+        name="email"
+        onChange={handleChange}
+        placeholder="Enter Email e.g.example@gmail.com"
+        data-testid="email"
+        value={inputs.email}
+      />
+      <input
+        type="text"
+        name="gender"
+        onChange={handleChange}
+        default="Male"
+        placeholder="Enter Gender e.g. Male/Female/Others"
+        data-testid="gender"
+        value={inputs.gender}
+      />
+      <input
+        type="text"
+        name="phoneNumber"
+        onChange={handleChange}
+        placeholder="Enter Phone number"
+        data-testid="phoneNumber"
+        value={inputs.phoneNumber}
+      />
+      <input
+        type="password"
+        name="password"
+        onChange={handleChange}
+        placeholder="Enter Password"
+        data-testid="password"
+        value={inputs.password}
+      />
+      <button data-testid="submit" onClick={handleClick}>
+        Submit
+      </button>
+      <div>{inputs.message}</div>
     </div>
-  )
-}
+  );
+};
+
 export default App;
